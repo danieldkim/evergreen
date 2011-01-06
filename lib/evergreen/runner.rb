@@ -14,7 +14,10 @@ module Evergreen
           msg = []
           msg << "  Failed: #{@row['name']}"
           msg << "    #{@row['message']}"
-          msg << "    in #{@row['trace']['fileName']}:#{@row['trace']['lineNumber']}" if @row['trace']
+          if @row['trace']['stack']
+            match_data = @row['trace']['stack'].match(/\/run\/(.*\.js)/)
+            msg << "    in #{match_data[1]}" if match_data[1]
+          end
           msg.join("\n")
         end
       end
