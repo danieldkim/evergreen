@@ -5,12 +5,12 @@ $:.unshift lib unless $:.include?(lib)
 require 'evergreen/version'
 
 Gem::Specification.new do |s|
-  s.name = "evergreen"
+  s.name = "gjastrab-evergreen"
   s.rubyforge_project = "evergreen"
   s.version = Evergreen::VERSION
 
-  s.authors = ["Jonas Nicklas"]
-  s.email = ["jonas.nicklas@gmail.com"]
+  s.authors = ["Jonas Nicklas", "Greg Jastrab"]
+  s.email = ["jonas.nicklas@gmail.com", "greg@smartlogicsolutions.com"]
   s.description = "Run Jasmine JavaScript unit tests, integrate them into Ruby applications."
 
   s.files = Dir.glob("{bin,lib,spec,config}/**/*") + %w(README.rdoc)
@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency("capybara", ["~> 0.4.0"])
   s.add_runtime_dependency("launchy", [">= 0.3.5"])
-  s.add_runtime_dependency("sinatra", [">= 1.1"])
+  s.add_runtime_dependency("sinatra", [">= 1.1.0"])
   s.add_runtime_dependency("json_pure", [">= 1.0.0"])
 
   s.add_development_dependency('rspec', ['~> 2.0'])
